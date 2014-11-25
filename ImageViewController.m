@@ -7,6 +7,7 @@
 //
 
 #import "ImageViewController.h"
+#import "NSObject+ImageScaling.h"
 
 @interface ImageViewController () <UIScrollViewDelegate>
 
@@ -79,13 +80,8 @@
     self.imageView.image = image;
     
     if (image) {
-//        CGFloat maxWidth = CGRectGetWidth(self.scrollView.bounds);
-//        CGFloat maxHeight = CGFLOAT_MAX;
-//        [image sizeThatFits:CGSizeMake(maxWidth, <#CGFloat height#>)]
-        CGFloat scale = image.size.height / image.size.width;
-        CGFloat width = CGRectGetWidth(self.scrollView.bounds);
-        CGFloat height = width * scale;
-        self.imageView.frame = CGRectMake(0, 0, width, height);
+        CGSize sizeThatFits = [self scaleImage:image toSizeThatFits:self.scrollView.bounds.size];
+        self.imageView.frame = CGRectMake(0, 0, sizeThatFits.width, sizeThatFits.height);
         self.scrollView.contentSize = self.imageView.bounds.size;
     } else {
         self.scrollView.contentSize = CGSizeZero;
