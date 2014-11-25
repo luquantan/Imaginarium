@@ -6,22 +6,21 @@
 //  Copyright (c) 2014 LuQuan Intrepid. All rights reserved.
 //
 
-#import "UIImage+ImageScalingForScrollView.h"
+#import "UIImage+Sizing.h"
 
-@implementation UIImage (ImageScalingForScrollView)
+@implementation UIImage (Sizing)
 
-- (CGSize)scaleImage:(UIImage *)image toSizeThatFits:(CGSize)sizeOfScrollView
+- (CGSize)sizeThatFits:(CGSize)size
 {
     CGSize sizeThatFits = CGSizeZero;
     
-    CGFloat scale = image.size.height / image.size.width;
-    CGFloat widthThatFits = sizeOfScrollView.width;
+    CGFloat scale = self.size.height / self.size.width;
+    CGFloat widthThatFits = size.width;
     CGFloat heightThatFits = scale * widthThatFits;
     
     sizeThatFits = CGSizeMake(widthThatFits, heightThatFits);
     
     return sizeThatFits;
 }
-
 
 @end

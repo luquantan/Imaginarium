@@ -15,7 +15,7 @@
 		D939362F1A23A41D0001D907 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D939362D1A23A41D0001D907 /* LaunchScreen.xib */; };
 		D939363B1A23A41E0001D907 /* ImaginariumDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D939363A1A23A41E0001D907 /* ImaginariumDemoTests.m */; };
 		D93936461A23A43A0001D907 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93936451A23A43A0001D907 /* ImageViewController.m */; };
-		D939A9821A251C9200D3629C /* UIImage+ImageScalingForScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A9811A251C9200D3629C /* UIImage+ImageScalingForScrollView.m */; };
+		D939A9821A251C9200D3629C /* UIImage+Sizing.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A9811A251C9200D3629C /* UIImage+Sizing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 		D939363A1A23A41E0001D907 /* ImaginariumDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaginariumDemoTests.m; sourceTree = "<group>"; };
 		D93936441A23A43A0001D907 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
 		D93936451A23A43A0001D907 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
-		D939A9801A251C9200D3629C /* UIImage+ImageScalingForScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageScalingForScrollView.h"; sourceTree = "<group>"; };
-		D939A9811A251C9200D3629C /* UIImage+ImageScalingForScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageScalingForScrollView.m"; sourceTree = "<group>"; };
+		D939A9801A251C9200D3629C /* UIImage+Sizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Sizing.h"; sourceTree = "<group>"; };
+		D939A9811A251C9200D3629C /* UIImage+Sizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Sizing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 			children = (
 				D93936441A23A43A0001D907 /* ImageViewController.h */,
 				D93936451A23A43A0001D907 /* ImageViewController.m */,
-				D939A9801A251C9200D3629C /* UIImage+ImageScalingForScrollView.h */,
-				D939A9811A251C9200D3629C /* UIImage+ImageScalingForScrollView.m */,
+				D939A9801A251C9200D3629C /* UIImage+Sizing.h */,
+				D939A9811A251C9200D3629C /* UIImage+Sizing.m */,
 				D93936251A23A41D0001D907 /* ViewController.h */,
 				D93936261A23A41D0001D907 /* ViewController.m */,
 				D93936281A23A41D0001D907 /* Main.storyboard */,
@@ -231,7 +231,7 @@
 			files = (
 				D93936271A23A41D0001D907 /* ViewController.m in Sources */,
 				D93936241A23A41D0001D907 /* AppDelegate.m in Sources */,
-				D939A9821A251C9200D3629C /* UIImage+ImageScalingForScrollView.m in Sources */,
+				D939A9821A251C9200D3629C /* UIImage+Sizing.m in Sources */,
 				D93936461A23A43A0001D907 /* ImageViewController.m in Sources */,
 				D93936211A23A41D0001D907 /* main.m in Sources */,
 			);

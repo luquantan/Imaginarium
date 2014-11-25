@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (ImageScalingForScrollView)
+@interface UIImage (Sizing)
 
-- (CGSize)scaleImage:(UIImage *)image toSizeThatFits:(CGSize)sizeOfScrollView;
-
+- (CGSize)sizeThatFits:(CGSize)size;
 
 @end
