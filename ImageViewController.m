@@ -79,8 +79,8 @@
     self.imageView.image = image;
     
     if (image) {
-        CGFloat maxWidth = CGRectGetWidth(self.scrollView.bounds);
-        CGFloat maxHeight = CGFLOAT_MAX;
+//        CGFloat maxWidth = CGRectGetWidth(self.scrollView.bounds);
+//        CGFloat maxHeight = CGFLOAT_MAX;
 //        [image sizeThatFits:CGSizeMake(maxWidth, <#CGFloat height#>)]
         CGFloat scale = image.size.height / image.size.width;
         CGFloat width = CGRectGetWidth(self.scrollView.bounds);
