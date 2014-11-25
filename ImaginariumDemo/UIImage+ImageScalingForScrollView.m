@@ -1,14 +1,14 @@
 //
-//  NSObject+ImageScaling.m
+//  UIImage+ImageScalingForScrollView.m
 //  ImaginariumDemo
 //
 //  Created by LuQuan Intrepid on 11/25/14.
 //  Copyright (c) 2014 LuQuan Intrepid. All rights reserved.
 //
 
-#import "NSObject+ImageScaling.h"
+#import "UIImage+ImageScalingForScrollView.h"
 
-@implementation NSObject (ImageScaling)
+@implementation UIImage (ImageScalingForScrollView)
 
 - (CGSize)scaleImage:(UIImage *)image toSizeThatFits:(CGSize)sizeOfScrollView
 {
@@ -22,4 +22,6 @@
     
     return sizeThatFits;
 }
+
+
 @end
