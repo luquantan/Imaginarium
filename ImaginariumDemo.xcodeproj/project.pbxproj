@@ -15,9 +15,8 @@
 		D939362F1A23A41D0001D907 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D939362D1A23A41D0001D907 /* LaunchScreen.xib */; };
 		D939363B1A23A41E0001D907 /* ImaginariumDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D939363A1A23A41E0001D907 /* ImaginariumDemoTests.m */; };
 		D93936461A23A43A0001D907 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93936451A23A43A0001D907 /* ImageViewController.m */; };
-		D939A9821A251C9200D3629C /* UIImage+Sizing.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A9811A251C9200D3629C /* UIImage+Sizing.m */; };
-		D939A97C1A250BBA00D3629C /* NSObject+ImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A97B1A250BBA00D3629C /* NSObject+ImageScaling.m */; };
 		D939A97F1A2513A100D3629C /* ImaginariumWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A97E1A2513A100D3629C /* ImaginariumWebService.m */; };
+		D939A9821A251C9200D3629C /* UIImage+Sizing.m in Sources */ = {isa = PBXBuildFile; fileRef = D939A9811A251C9200D3629C /* UIImage+Sizing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +45,10 @@
 		D939363A1A23A41E0001D907 /* ImaginariumDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaginariumDemoTests.m; sourceTree = "<group>"; };
 		D93936441A23A43A0001D907 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
 		D93936451A23A43A0001D907 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
-		D939A9801A251C9200D3629C /* UIImage+Sizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Sizing.h"; sourceTree = "<group>"; };
-		D939A9811A251C9200D3629C /* UIImage+Sizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Sizing.m"; sourceTree = "<group>"; };
-		D939A97A1A250BBA00D3629C /* NSObject+ImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ImageScaling.h"; sourceTree = "<group>"; };
-		D939A97B1A250BBA00D3629C /* NSObject+ImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImageScaling.m"; sourceTree = "<group>"; };
 		D939A97D1A2513A100D3629C /* ImaginariumWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImaginariumWebService.h; sourceTree = "<group>"; };
 		D939A97E1A2513A100D3629C /* ImaginariumWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImaginariumWebService.m; sourceTree = "<group>"; };
+		D939A9801A251C9200D3629C /* UIImage+Sizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Sizing.h"; sourceTree = "<group>"; };
+		D939A9811A251C9200D3629C /* UIImage+Sizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Sizing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +94,6 @@
 				D93936451A23A43A0001D907 /* ImageViewController.m */,
 				D939A9801A251C9200D3629C /* UIImage+Sizing.h */,
 				D939A9811A251C9200D3629C /* UIImage+Sizing.m */,
-				D939A97A1A250BBA00D3629C /* NSObject+ImageScaling.h */,
-				D939A97B1A250BBA00D3629C /* NSObject+ImageScaling.m */,
 				D939A97D1A2513A100D3629C /* ImaginariumWebService.h */,
 				D939A97E1A2513A100D3629C /* ImaginariumWebService.m */,
 				D93936251A23A41D0001D907 /* ViewController.h */,

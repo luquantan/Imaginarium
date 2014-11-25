@@ -11,5 +11,6 @@
 
 @interface ImaginariumWebService : NSObject
 
++ (void)getImageWithName:(NSString *)imageName inBackgroundWithCompletion:(void(^)(UIImage *image, NSError *error))completionBlock;
 
 @end
