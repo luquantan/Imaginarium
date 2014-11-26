@@ -24,22 +24,13 @@ static NSString * const LQImageDownloadBaseURL = @"http://images.apple.com/v/iph
         ivc.title = segue.identifier;
         
         if (![segue.identifier isEqualToString:[NSString stringWithFormat:@"randomPhoto"]]) {
-            ivc.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://images.apple.com/v/iphone-5s/gallery/a/images/download/%@.jpg", segue.identifier]];
+            ivc.imageName = [NSString stringWithFormat:@"%@.jpg", segue.identifier];
         } else {
             NSArray *otherPhotos = @[@"4",@"5",@"6"];
-            ivc.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://images.apple.com/v/iphone-5s/gallery/a/images/download/photo_%@.jpg", otherPhotos[arc4random_uniform(2)]]];
+            ivc.imageName = [NSString stringWithFormat:@"photo_%@.jpg", otherPhotos[arc4random_uniform(2)]];
         }
         
     }
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

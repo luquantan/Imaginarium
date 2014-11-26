@@ -7,6 +7,8 @@
 //
 
 #import "ImageViewController.h"
+#import "UIImage+Sizing.h"
+#import "ImaginariumWebService.h"
 
 @interface ImageViewController () <UIScrollViewDelegate>
 
@@ -14,9 +16,11 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) UIImage *image;
+
 @end
 
 @implementation ImageViewController
+
 - (void)setScrollView:(UIScrollView *)scrollView
 {
     _scrollView = scrollView;
@@ -34,41 +38,21 @@
 {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:self.scrollView.bounds];
-        _imageView.backgroundColor = [UIColor yellowColor];
     }
     return _imageView;
 }
 
-- (void)setImageURL:(NSURL *)imageURL
+
+- (void)setImageName:(NSString *)imageName
 {
-    _imageURL = imageURL;
-//    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
-    [self startDownloadingImage];
+    _imageName = imageName;
+    [self.activityIndicator startAnimating];
+    [ImaginariumWebService getImageWithName:imageName inBackgroundWithCompletion:^(UIImage *image,NSError *error) {
+        self.image = image;
+        [self.activityIndicator stopAnimating];
+    }];
 }
 
-- (void)startDownloadingImage
-{
-    self.image = nil; //Remove the old image
-    if (self.imageURL) {
-        [self.activityIndicator startAnimating];
-        NSURLRequest *request = [NSURLRequest requestWithURL:self.imageURL];
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-        NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            if (!error) {
-                if ([request.URL isEqual:self.imageURL]) {
-                    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]]; //This does not need to be on the main thread because 1) UIImage is one of the few things that do not need to run on the main thread and 2) UIImage does not axctaully show anything on screen
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.image = image;
-                    });
-                }
-            }
-        }];
-        [task resume];
-    }
-}
-
-//Method using property without InstanceVariable. Non @synthesize needed
 - (UIImage *)image
 {
     return self.imageView.image;
@@ -79,45 +63,18 @@
     self.imageView.image = image;
     
     if (image) {
-        CGFloat maxWidth = CGRectGetWidth(self.scrollView.bounds);
-        CGFloat maxHeight = CGFLOAT_MAX;
-//        [image sizeThatFits:CGSizeMake(maxWidth, <#CGFloat height#>)]
-        CGFloat scale = image.size.height / image.size.width;
-        CGFloat width = CGRectGetWidth(self.scrollView.bounds);
-        CGFloat height = width * scale;
-        self.imageView.frame = CGRectMake(0, 0, width, height);
+        CGSize sizeThatFits = [image sizeThatFits:self.scrollView.bounds.size];
+        self.imageView.frame = CGRectMake(0, 0, sizeThatFits.width, sizeThatFits.height);
         self.scrollView.contentSize = self.imageView.bounds.size;
     } else {
         self.scrollView.contentSize = CGSizeZero;
     }
-    
-    [self.activityIndicator stopAnimating];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.scrollView addSubview:self.imageView];
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self.scrollView scrollRectToVisible:self.imageView.bounds animated:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
